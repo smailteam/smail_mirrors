@@ -1,0 +1,20 @@
+textarea{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 0px;
+    height: 40%;
+    resize: none;
+    margin: 0px;
+}
+input{
+    border-radius: 10px 10px 0px 0px;
+    width: 100%;
+    padding: 3px;
+}
+.submit{
+    border-radius: 0px 0px 10px 10px;
+}
+.center{
+    border-radius: 0px;
+}
