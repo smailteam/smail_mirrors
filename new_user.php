@@ -1,7 +1,4 @@
 <?php include 'i18n.class.php'; $i18n = new i18n(); $i18n->init();?>
-<?php include 'api/server_info.php';
-$conn=mysqli_connect($db_link,$db_user,$db_password,$db_name);
-$query=mysqli_query($conn,"CREATE TABLE mail(mail_user,mail_password)");?>
 <html>
     <head>
         <title>Register Smail</title>

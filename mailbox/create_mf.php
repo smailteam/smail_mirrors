@@ -12,7 +12,7 @@ if ($log==1 and isset($_GET['folder'])){
 }
 else{
     if ($log==0){
-        header('Location: ../login.html');
+        header('Location: ../login.php');
     }
     else{}
 }

@@ -9,15 +9,14 @@ if (isset($_POST['old']) and isset($_POST['new'])){
     print_r($i);
     if (password_verify($_POST['old'],$i['mail_password'])){
         $query=mysqli_query($conn,'UPDATE mail SET mail_password="'.password_hash($_POST['new'],PASSWORD_DEFAULT).'" where mail_user="'.$_SESSION['m_user'].'"');
-        header('Location: ../login.html');
+        header('Location: ../login.php');
     }
     else{
-        echo 'F';
-        http_response_code(404);
+        header('Location: ../ch_p.php');
     }
 }
 else{
-    http_response_code(404);
+    header('Location: ../ch_p.php');
 }
 
 ?>

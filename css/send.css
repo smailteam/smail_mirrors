@@ -18,3 +18,18 @@ input{
 .center{
     border-radius: 0px;
 }
+@media (orientation: portrait){
+    body{
+        padding-left: 10%;
+        padding-right: 10%;
+    }
+    text{
+        font-size: 20px;
+    }
+}
+@media (orientation: landscape){
+    body{
+        padding-left: 40%;
+        padding-right: 40%;
+    }
+}

@@ -7,6 +7,7 @@ if (isset($_POST['mail']) and $_POST['to'] and isset($_POST['html']) and isset($
     $other=array(
         CURLOPT_URL => 'https://'.preg_split('/@/',$_POST['mail'])[1].'/mailbox/user.php',
         CURLOPT_POST => true,
+        CURLOPT_SSLCERT => '',
         CURLOPT_POSTFIELDS => $mail,
         CURLOPT_RETURNTRANSFER => true
     );
@@ -21,9 +22,9 @@ if (isset($_POST['mail']) and $_POST['to'] and isset($_POST['html']) and isset($
   		echo $info;
 	    if ($info==200){
             if (file_exists($_POST['to'].'/index.php')){
-				$date=date('Y-m-d H:i:s');
+				$date=date('d/m/Y H:i:s');
                 $content='<?php
-$html="'.'<!version=0.1>'.str_replace("'",'"',$_POST['html']).'";
+$html="'.'<!version=0.1>'.str_replace('"',"'",$_POST['html']).'";
 $sender="'.$_POST['mail'].'";
 $date="'.$date.'";
 ?>';

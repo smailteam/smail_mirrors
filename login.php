@@ -1,9 +1,15 @@
+<?php
+ini_set('display_errors',1);
+ini_set('display_initial_errors',1);
+error_reporting(E_ALL);?>
 <?php include 'i18n.class.php'; $i18n = new i18n(); $i18n->init();?>
 <html>
     <head>
         <title>Login Smail</title>
-        <link type='text/css' rel='stylesheet' href='css/send.css?v=1'/>
-        <link type='text/css' rel='stylesheet' href='css/all.css?v=2'/>
+        <!-----Alls------>
+        <link type='text/css' rel='stylesheet' href='css/all.css?v=4'/>
+        <!--Sends Pages-->
+        <link type='text/css' rel='stylesheet' href='css/send.css?v=2'/>
         <style type='text/css'>
         input{
             display: block;
@@ -19,7 +25,7 @@
         <form action='api/login.php' method='POST'>
             <input type="text" name="mail" id="mail" placeholder="Mail">
             <input type="password" name="password" class='center' id="" placeholder="Password">
-            <input type="submit" value=<?php echo L::login_postlogin_submit;?> class='submit'>
+            <input type="submit" value=<?php echo L::login_submit;?> class='submit'>
         </form>
     </body>
 </html>

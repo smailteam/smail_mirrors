@@ -15,6 +15,9 @@ h1,text{
     color: white;
     font-family: Bahnschrift;
 }
+text{
+    font-size: 25px;
+}
 a{
     font-family: Bahnschrift;
     color: yellowgreen;
@@ -28,4 +31,7 @@ a:hover{
     text,h1,a,input,textarea{
         font-size: 40px;
     }
+}
+body{
+    padding: 20px;
 }

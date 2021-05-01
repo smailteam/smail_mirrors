@@ -1,0 +1,27 @@
+body{
+    padding: 1%;
+}
+h1{
+    padding: 0px;
+    margin: 0px;
+}
+.go{
+    float: right;
+    padding-right: 1%;
+}
+
+/** Mobile **/
+@media (orientation:portrait){
+    h1{
+        font-size: 20px;
+    }
+    .go{
+        float: none;
+    }
+    text{
+        font-size: 20px;
+    }
+    .mail text,a{
+        font-size: 20px;
+    }
+}

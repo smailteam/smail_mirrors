@@ -47,6 +47,6 @@ if (isset($_POST['mail']) and isset($_POST['password'])){
     }
 }
 else{
-    echo json_encode('{code: 400}');
+    header('Location: ../login.php');
 }
 ?>

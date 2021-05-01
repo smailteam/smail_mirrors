@@ -1,14 +1,14 @@
-<!-- {instance:Smail,version:0.3} --->
-<?php include 'i18n.class.php'; $i18n = new i18n(); $i18n->init(); include 'api/server_info.php';?>
+<!-- {instance:Smail,version:0.2} --->
+<?php include 'i18n.class.php'; $i18n = new i18n(); $i18n->init();?>
 <html>
     <head>
         <title>SecureMail</title>
         <link rel='stylesheet' type='text/css' href='css/index.css'>
-        <link type='text/css' rel='stylesheet' href='css/all.css'/>
+        <link type='text/css' rel='stylesheet' href='css/all.css?v=1'/>
     </head>
     <body style='margin: 0px;'>
         <div style='color: white; background: #30303c; padding: 1%;'>
-            <h1 style='margin: 0px;'><?php echo L::index_welcome; echo " ". $instance_name;?></h1>
+            <h1 style='margin: 0px;'><?php echo L::index_welcome;?></h1>
             <hr>
         </div>
         <div style='color: white; background: #30303c; padding: 1%;'>

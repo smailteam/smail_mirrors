@@ -34,6 +34,6 @@ if (isloged()==1){
     }
 }
 else{
-    header('Location: ../login.html');
+    header('Location: ../login.php');
 }
 ?>

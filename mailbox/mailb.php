@@ -1,8 +1,11 @@
 <?php
+ini_set('display_errors',1);
+ini_set('display_initial_errors',1);
+error_reporting(E_ALL);
 require '../api/functions.php';
 session_issruning();
 if (isloged()==0){
-    header('Location: ../login.html');
+    header('Location: ../login.php');
     die();
 }
 ?>
@@ -10,7 +13,7 @@ if (isloged()==0){
 <html>
     <head>
         <link type='text/css' rel='stylesheet' href='../css/all.css'/>
-        <link type='text/css' rel='stylesheet' href='../css/mailbox.css'/>
+        <link type='text/css' rel='stylesheet' href='../css/mailbox.css?v=1'/>
     </head>
     <body>
         <h1>Mail Box <?php if(isset($_GET['box'])==true){echo $_GET['box'];}?></h1>
@@ -38,7 +41,7 @@ if (isloged()==0){
                         foreach ($dirs as $i){
                             $date='';
                             include preg_split('/@/',$_SESSION['m_user'])[0].'/mails/'.$i;
-                            echo '<span class="mail"><a href="getmail.php?box='.$_GET['box'].'&id='.$i.'">'.$sender.'</a> <text>'.$date.'</text> <a href="getmail.php?delthem='.$i.'">Delete</a></span><br>
+                            echo '<span class="mail"><a href="getmail.php?box='.$_GET['box'].'&id='.$i.'">'.$sender.'</a> <text>'.str_replace('-','/',$date).'</text> <a href="getmail.php?delthem='.$i.'">Delete</a></span><br>
 ';
                         }
                     }
@@ -50,7 +53,7 @@ if (isloged()==0){
                     foreach ($dirs as $i){
                         $date='';
                         include preg_split('/@/',$_SESSION['m_user'])[0].'/mails/'.$i;
-                        echo '<span class="mail"><a href="getmail.php?id='.$i.'">'.$sender.'</a> <text>'.$date.'</text> <a href="getmail.php?delthem='.$i.'">Delete</a></span><br>
+                        echo '<span class="mail"><a href="getmail.php?id='.$i.'">'.$sender.'</a> <div class="go"><text>'.str_replace('-','/',$date).'</text> <a href="getmail.php?delthem='.$i.'">Delete</a></div></span><br>
 ';
                     }
                 }

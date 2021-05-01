@@ -1,4 +1,10 @@
 <?php
+ini_set('display_errors',1);
+ini_set('display_initial_errors',1);
+error_reporting(E_ALL);
+include '../i18n.class.php'; $i18n = new i18n('../lang/lang_{LANGUAGE}.ini'); $i18n->init();
+?>
+<?php
 include '../api/functions.php';
 if (isset($_POST['content']) and isset($_POST['mail_r'])){
     session_issruning();
@@ -22,16 +28,15 @@ if (isset($_POST['content']) and isset($_POST['mail_r'])){
             $out=curl_exec($curl);
             echo curl_error($curl);
             if (curl_error($curl)){
-                echo json_encode('{end: 400}');
+                header('Location: mailb.php?info=<text>'.L::errors_sslerror.'</text> '.curl_error($curl));
             }
             else{
                 $info=curl_getinfo($curl,CURLINFO_HTTP_CODE);
-				echo $info;
                 if ($info==200){
-                    echo json_encode('{code:200, detail=mail sended}');
+	                header('Location: mailb.php?info=<text>'.L::errors_nonerror.'</text>');
                 }
                 else{
-                    echo json_encode('{code:404, detail=error}');
+					header('Location: mailb.php?info=<text>'.L::errors_iderror_not.'</text>');
                 }
             }
         }
@@ -53,24 +58,21 @@ if (isset($_POST['content']) and isset($_POST['mail_r'])){
             $out=curl_exec($curl);
             echo curl_error($curl);
             if (curl_error($curl)){
-                echo json_encode('{end: 400}');
+                header('Location: mailb.php?info=<text>'.L::errors_sslerror.'</text>');
             }
             else{
-                echo $out;
                 $info=curl_getinfo($curl,CURLINFO_HTTP_CODE);
-                echo $info;
-                echo $out;
                 if ($info==200){
-                    echo json_encode('{code:200, detail=mail sended}');
+					header('Location: mailb.php?info=<text>'.L::errors_nonerror.'</text>');
                 }
                 else{
-                    echo json_encode('{code:404, detail=error}');
+                	header('Location: mailb.php?info=<text>'.L::errors_iderror_not.'</text>');
                 }
             }
         }
     }
     else{
-        echo json_encode('{code:500, detail=unknow login}');
+        header('Location: ../login.php');
     }
 }
 
