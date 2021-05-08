@@ -8,6 +8,7 @@ include '../i18n.class.php'; $i18n = new i18n('../lang/lang_{LANGUAGE}.ini'); $i
 include '../api/functions.php';
 if (isset($_POST['content']) and isset($_POST['mail_r'])){
     session_issruning();
+    $_POST['content']=str_replace('\n','<br>',$_POST['content']);
     if (isloged()==1){
         $split=preg_split('/@/',$_POST['mail_r']);
         $cnt=count($split);
@@ -19,7 +20,8 @@ if (isset($_POST['content']) and isset($_POST['mail_r'])){
                 CURLOPT_URL => 'https://'.$split[1].'mailbox/reicive.php',
                 CURLOPT_POST => true,
                 CURLOPT_POSTFIELDS => $mail,
-                CURLOPT_RETURNTRANSFER => true
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false
             );
             echo 'Sending sm to the url '.$split[1];
             echo '<br> and to the mail id '.$split[0];
@@ -49,14 +51,15 @@ if (isset($_POST['content']) and isset($_POST['mail_r'])){
                 CURLOPT_URL => 'https://'.$selfUrl.'mailbox/reicive.php',
                 CURLOPT_POST => true,
                 CURLOPT_POSTFIELDS => $mail,
-                CURLOPT_RETURNTRANSFER => true
+                CURLOPT_RETURNTRANSFER => true,
+                CURLOPT_SSL_VERIFYPEER => false
             );
             echo 'Sending sm to the url '.$selfUrl;
             echo '<br> and to the mail id '.$split[0];
             $curl=curl_init();
             curl_setopt_array($curl, ($other));
             $out=curl_exec($curl);
-            echo curl_error($curl);
+            echo $out;
             if (curl_error($curl)){
                 header('Location: mailb.php?info=<text>'.L::errors_sslerror.'</text>');
             }
@@ -66,7 +69,7 @@ if (isset($_POST['content']) and isset($_POST['mail_r'])){
 					header('Location: mailb.php?info=<text>'.L::errors_nonerror.'</text>');
                 }
                 else{
-                	header('Location: mailb.php?info=<text>'.L::errors_iderror_not.'</text>');
+                	header('Location: mailb.php?info=<text>'.L::errors_iderror_not.'</text>'.$out);
                 }
             }
         }

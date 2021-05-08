@@ -18,9 +18,9 @@ if (isloged()==0){
         </style>
     </head>
     <body>
-        <form action='mailbox/send.php' method='POST'>
-            <input type="text" name="mail_r" placeholder="SMail">
-            <textarea type="text" name="content" placeholder=<?php echo L::send_content;?>></textarea>
+        <form action='mailbox/new_group.php' method='POST'>
+            <input type="text" name="newname" placeholder="Name">
+            <input type="hidden" name="admin" value="<?php echo $_SESSION['m_user'];?>">
             <input class='submit' type="submit" value=<?php echo L::send_send;?>>
         </form>
     </body>

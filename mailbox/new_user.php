@@ -6,17 +6,21 @@ error_reporting(E_ALL);
 
 include '../api/server_info.php';
 
-if (strpos('@',$_POST['mail'])){
-    header('../new_user.php?info='.L::new_aroba);
+if (strpos($_POST['mail'],'@') or strpos($_POST['mail'],'.') or strpos($_POST['mail'],'/')){
+    header('Location: ../new_user.php?info='.L::new_aroba);
 }
 elseif (isset($_POST['mail']) and isset($_POST['password'])){
     $conn=mysqli_connect($db_link,$db_user,$db_password,$db_name);
     $selfUrl=$_SERVER['HTTP_HOST'].preg_replace('/mailbox\/new_user.php/','',$_SERVER['PHP_SELF']);
+    $query=mysqli_query($conn,'CREATE TABLE mail (mail_user VARCHAR(150),mail_password VARCHAR(300))');
     $query=mysqli_query($conn,'SELECT mail_user FROM mail WHERE mail_user="'.$_POST['mail'].'@'.$selfUrl.'"');
     print_r($query);
     if (mysqli_connect_error()){
         http_response_code(500);
 		header('Location: new_user.php?info=<text>DB_error</text>');
+    }
+    elseif (strpos('.',$_POST['mail']) AND strpos('$',$_POST['mail']) AND strpos('@',$_POST['mail'])){
+        header('Location: new_user.php?info=<text>'.L::new_invalidchar.'</text>');
     }
     elseif (mysqli_num_rows($query)==0){
         mkdir($_POST['mail']);

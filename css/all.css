@@ -2,24 +2,24 @@ html{
     background: #30303c;
 }
 input,textarea{
-    font-family: Bahnschrift;
+    font-family: Verdana;
     border: none;
 }
 h1{
-    font-size: 60px;
+    font-size: 50px;
 }
 .mail,text,a{
     font-size: 30px;
 }
 h1,text{
     color: white;
-    font-family: Bahnschrift;
+    font-family: Verdana;
 }
 text{
     font-size: 25px;
 }
 a{
-    font-family: Bahnschrift;
+    font-family: Verdana;
     color: yellowgreen;
     text-decoration: none;
 }

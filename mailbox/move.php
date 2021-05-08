@@ -3,10 +3,10 @@ include '../api/functions.php';
 session_issruning();
 if (isloged()==1){
     if (isset($_GET['id']) and  isset($_GET['to']) and isset($_GET['from'])){
-        if (is_dir($_SESSION['m_user'].'/'.$_GET['from'])){
-            if (file_exists($_SESSION['m_user'].'/'.$_GET['from']).$_GET['id'] and strpos($_GET['to'],'..')==false and strpos($_GET['to'],'/')==false and strpos($_GET['to'],'\\')==false and strpos($_GET['from'],'..')==false and strpos($_GET['from'],'\\')==false and strpos($_GET['from'],'/')==false){
-                rename($_SESSION['m_user'].'/'.$_GET['from'].'/'.$_GET['id'],$_SESSION['m_user'].'/'.$_GET['to'].'/'.$_GET['id']);
-                echo 'Success';
+        if (is_dir(preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['from'])){
+            if (file_exists(preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['from']).$_GET['id'] and strpos($_GET['to'],'..')==false and strpos($_GET['to'],'/')==false and strpos($_GET['to'],'\\')==false and strpos($_GET['from'],'..')==false and strpos($_GET['from'],'\\')==false and strpos($_GET['from'],'/')==false){
+                try{rename(preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['from'].'/'.$_GET['id'],preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['to'].'/'.$_GET['id']);echo 'Success';}catch (Exception $error){echo 'ID not exists';}
+                
             }
             else{
                 http_response_code(500);

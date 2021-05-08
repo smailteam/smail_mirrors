@@ -16,7 +16,7 @@ if (isloged()==0){
         <link type='text/css' rel='stylesheet' href='../css/mailbox.css?v=1'/>
     </head>
     <body>
-        <h1>Mail Box <?php if(isset($_GET['box'])==true){echo $_GET['box'];}?></h1>
+        <h1><?php if (isset($_GET['channel'])){?>Mail Box - Special<?php } else{ ?>Mail Box<?php } ?> <?php if(isset($_GET['box'])==true){echo $_GET['box'];}?></h1>
         <?php
         if (isset($_GET['info'])){
             echo str_replace('_',' ',$_GET['info']);
@@ -34,7 +34,19 @@ if (isloged()==0){
                 return ($files) ? $files : false;
         }
         if (isloged()==1){
-            if (isset($_GET['box'])){
+            if (isset($_GET['channel'])){
+                if (is_dir($_GET['channel']) and strpos($_GET['channel'],'/')==false and strpos($_GET['channel'],'..')==false or strpos($_GET['channel'],'\\')==false){
+                    $dirs=scan_dir(getcwd().'/'.$_GET['channel'].'/mails/');
+                    if (($dirs==false)==false){
+                        foreach ($dirs as $files){
+                            include getcwd().'/'.$_GET['channel'].'/mails/'.$files;
+                            echo '<span class="mail"><a href="'.$_GET['channel'].'/mails/'.$files.'">'.substr($content,0,20).'...</a> <text>'.str_replace('-','/',$date).'</text> </span><br>
+';  
+                        }
+                    }
+                }
+            }
+            elseif (isset($_GET['box'])){
                 if (is_dir(preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['box']) and strpos($_GET['box'],'/')==false and strpos($_GET['box'],'..')==false or strpos($_GET['box'],'\\')==false){
                     $dirs=scan_dir(getcwd().'/'.preg_split('/@/',$_SESSION['m_user'])[0].'/'.$_GET['box']);
                     if (($dirs==false)==false){

@@ -6,5 +6,18 @@ a:hover{
     color: greenyellow;
 }
 text,h1{
-    font-family: Bahnschrift;
+    font-family: Verdana;
+}
+.tag{
+    color: white;
+    background: #30303c;
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
+.sitemap{
+    padding: 5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white
 }

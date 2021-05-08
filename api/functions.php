@@ -38,4 +38,35 @@ function isloged(){
         return 0;
     }
 }
+
+function return_plant($info,$date,$channelname){
+	$date=str_replace('-','/',$date);
+	echo "
+	<html>
+	<head>
+		<link rel='stylesheet' type='text/css' href='../../../css/all.css'>
+		<link rel='stylesheet' type='text/css' href='../../../css/channel.css'>
+	</head>
+	<body>
+		<text>Channel: $channelname</text><br>
+		<text>$date</text><br>
+		<text>$info</text><br>
+	</body>
+	</html>";
+}
+function return_plant_group($info,$date,$channelname){
+	$date=str_replace('-','/',$date);
+	echo "
+	<html>
+	<head>
+		<link rel='stylesheet' type='text/css' href='../../../css/all.css'>
+		<link rel='stylesheet' type='text/css' href='../../../css/channel.css'>
+	</head>
+	<body>
+		<text>User: $channelname</text><br>
+		<text>$date</text><br>
+		<text>$info</text><br>
+	</body>
+	</html>";
+}
 ?>

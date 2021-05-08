@@ -10,7 +10,13 @@ if (isset($_POST['mail'])){
             http_response_code(200);
         }
         else{
-            http_response_code(400);
+			$query=mysqli_query($conn,'SELECT channel_name FROM mail_lists WHERE channel_name="'.$_POST['mail'].'"');
+			if (gettype($query=='boolean')){
+				http_response_code(400);
+			}
+			else{
+				http_response_code(200);
+			}
         }
     }
     else{

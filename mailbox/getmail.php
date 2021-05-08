@@ -29,7 +29,7 @@
                     }
                 }
                 elseif(isset($_GET['id'])){
-                    try{include preg_split('/@/',$_SESSION['m_user'])[0].'/mails/'.$_GET['id'];echo '<text>'.L::gmail_sender.': '.$sender.'</text><br>';echo '<text>'.L::gmail_content.': '.$html;echo '</text><br><a href="mailb.php">'.L::gmail_return.'</a><text> '.L::gmail_or.' </text><a href="move.php?&from=mails&to=readed&id='.$_GET['id'].'">'.L::gmail_read.'</a>';}catch (Exception $e){echo L::gmail_invalid_id;}
+                    try{include preg_split('/@/',$_SESSION['m_user'])[0].'/mails/'.$_GET['id'];echo '<text>'.L::gmail_sender.': '.$sender.'</text><br>';echo '<text>'.L::gmail_content.': '.str_replace('\n','<br>',$html);echo '</text><br><a href="mailb.php">'.L::gmail_return.'</a><text> '.L::gmail_or.' </text><a href="move.php?&from=mails&to=readed&id='.$_GET['id'].'">'.L::gmail_read.'</a>';}catch (Exception $e){echo L::gmail_invalid_id;}
                 }
             }
         }

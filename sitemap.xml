@@ -1,0 +1,78 @@
+<xml>
+    <page>
+        <name>Index</name>
+        <link>index.php</link>
+    </page>
+    <page>
+        <name>MailB Web SMail Manager</name>
+        <link>mailbox/mailb.php</link>
+    </page>
+    <page>
+        <name>Register User</name>
+        <link>new_user.php</link>
+    </page>
+    <page>
+        <name>Change Password</name>
+        <link>ch_p.php</link>
+    </page>
+    <page>
+        <name>Register Channel</name>
+        <link>new_channel.php</link>
+    </page>
+    <page>
+        <name>Register Group</name>
+        <link>new_group.php</link>
+    </page>
+    <page>
+        <name>Send Message</name>
+        <link>send_m.php</link>
+    </page>
+    <page>
+        <name>Login</name>
+        <link>login.php</link>
+    </page>
+    <page> 
+        <name>User Exists Script</name>
+        <link>mailbox/user.php</link>
+    </page>
+    <page>
+        <name>Send Script</name>
+        <link>mailbox/send.php</link>
+    </page>
+    <page>
+        <name>Remove Mailbox Script</name>
+        <link>mailbox/remove_mf.php</link>
+    </page>
+    <page>
+        <name>XMLMail Script</name>
+        <link>mailbox/xmlmail.php</link>
+    </page>
+    <page>
+        <name>Reicive Script</name>
+        <link>mailbox/reicive.php</link>
+    </page>
+    <page>
+        <name>XML Raw Mails Script</name>
+        <link>mailbox/raw_mails.php</link>
+    </page>
+    <page>
+        <name>Move Script</name>
+        <link>mailbox/move.php</link>
+    </page>
+    <page>
+        <name>ISMYCHANNEL Script</name>
+        <link>mailbox/ismch.php</link>
+    </page>
+    <page>
+        <name>XMLGETMAIL Script</name>
+        <link>mailbox/getmail.php</link>
+    </page>
+    <page>
+        <name>Create Mailbox Folder Script</name>
+        <link>mailbox/create_mf.php</link>
+    </page>
+    <page>
+        <name>Change Password Script</name>
+        <link>mailbox/change_p.php</link>
+    </page>
+</xml>
