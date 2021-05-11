@@ -8,6 +8,6 @@ privacy and security on the internet.
 Our team thanks to you a normal user,
 maybe a new hoster what be using SMail.
 
-Considers your privacy! 
+Considers your privacy!
 
 # Licensed by GNU Public License Version 3
