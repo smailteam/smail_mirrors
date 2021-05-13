@@ -11,7 +11,7 @@
             <h1 style='margin: 0px;'><?php echo L::index_welcome;?></h1>
             <hr>
         </div>
-        <div class="sitemap"><a href='map.php'>SiteMap</a> - <a href='map.php'>Login</a> - <a href='map.php'>Register</a> - <a href="https://reisub.nsupdate.info/git/?p=smail.git/">Git</a> - <a href="https://reisub.nsupdate.info/bugs/">Bugs</a></div>
+        <div class="sitemap"><a href='map.php'>SiteMap</a> - <a href='login.php'>Login</a> - <a href='new_user.php'>Register</a> - <a href="https://reisub.nsupdate.info/git/?p=smail.git/.git">Git</a> - <a href="https://reisub.nsupdate.info/bugs/">Bugs</a></div>
         <div class="tag">
             <h1 style='margin: 0px;'><?php echo L::index_about;?></h1>
             <hr>

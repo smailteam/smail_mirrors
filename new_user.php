@@ -21,5 +21,6 @@
             <input type="password" name="password" class='center' id="" placeholder="Password">
             <input type="submit" value=<?php echo L::reg_submit;?> class='submit'>
         </form>
+        <text style="text-align:center;display:block"><?php echo L::reg_or_login ?></text>
     </body>
 </html>

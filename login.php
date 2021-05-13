@@ -19,7 +19,7 @@ error_reporting(E_ALL);?>
     <body>
         <?php
             if (isset($_GET['info'])){
-                echo str_replace('_',' ',$_GET['info']);
+                echo "<text>".str_replace('_',' ',$_GET['info'])."</text>";
             }
         ?>
         <form action='api/login.php' method='POST'>
@@ -27,5 +27,6 @@ error_reporting(E_ALL);?>
             <input type="password" name="password" class='center' id="" placeholder="Password">
             <input type="submit" value=<?php echo L::login_submit;?> class='submit'>
         </form>
+        <text style="text-align:center;display:block"><?php echo L::login_or_nu ?></text>
     </body>
 </html>
