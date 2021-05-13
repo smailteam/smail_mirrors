@@ -10,4 +10,12 @@ maybe a new hoster what be using SMail.
 
 Considers your privacy!
 
-# Licensed by GNU Public License Version 3
+## Documentation
+
+You can see our documentation on https://reisub.nsupdate.info/wiki/?page=SMail
+
+## Licenses & libraries used
+### SMail
+- SMail itself, is licensed under GPLv3, for more info., read the file "LICENSE"
+### Libraries
+- [php-i18n](https://github.com/Philipp15b/php-i18n) | MIT License (i18n.LICENSE)
