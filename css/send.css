@@ -27,8 +27,8 @@ input{
         padding-right: 10%;
     }
     body.send_m{
-        padding-left: 5%;
-        padding-right: 5%;
+        padding-left: 23%;
+        padding-right: 10%;
     }
     text{
         font-size: 20px;
@@ -40,7 +40,7 @@ input{
         padding-right: 40%;
     }
     body.send_m{
-        padding-left: 30%;
-        padding-right: 40%;
+        padding-left: 23%;
+        padding-right: 10%;
     }
 }
