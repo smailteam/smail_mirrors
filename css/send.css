@@ -1,3 +1,6 @@
+body.send_m{
+    padding: 10px;
+}
 textarea{
     width: 100%;
     display: flex;
@@ -23,6 +26,10 @@ input{
         padding-left: 10%;
         padding-right: 10%;
     }
+    body.send_m{
+        padding-left: 5%;
+        padding-right: 5%;
+    }
     text{
         font-size: 20px;
     }
@@ -30,6 +37,10 @@ input{
 @media (orientation: landscape){
     body{
         padding-left: 40%;
+        padding-right: 40%;
+    }
+    body.send_m{
+        padding-left: 30%;
         padding-right: 40%;
     }
 }
