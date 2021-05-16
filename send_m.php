@@ -1,9 +1,9 @@
 <?php
 include 'api/functions.php';
 session_issruning();
-/*if (isloged()==0){
+if (isloged()==0){
     header('Location: login.php');
-}*/
+}
 
 ?>
 <?php include 'i18n.class.php'; $i18n = new i18n(); $i18n->init();?>
